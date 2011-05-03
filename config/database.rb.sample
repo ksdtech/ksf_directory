@@ -1,0 +1,21 @@
+##
+# A MySQL connection:
+# DataMapper.setup(:default, 'mysql://user:password@localhost/the_database_name')
+#
+# # A Postgres connection:
+# DataMapper.setup(:default, 'postgres://user:password@localhost/the_database_name')
+#
+# # A Sqlite3 connection
+# DataMapper.setup(:default, "sqlite3://" + Padrino.root('db', "development.db"))
+#
+
+
+DataMapper.logger = logger
+DataMapper.setup(:default, 'mysql://user:password@localhost/the_database_name')
+
+POWERSCHOOL_DB_CONFIG = {
+  'adapter' => 'OCI8',
+  'database' => 'POWERSCHOOLDB',
+  'user' => 'POWERSCHOOLUSER',
+  'password' => 'POWERSCHOOLPASSWORD'
+}
