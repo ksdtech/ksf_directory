@@ -1,0 +1,64 @@
+%tr
+  %td &nbsp;
+  %td= family.id
+  %td &nbsp;
+%tr
+  %td{:width => 150}= family.last_name
+  %td= family.home_1_parent_names
+  %td= family.home_1_phone
+%tr
+  %td= family.child_1_info
+  %td= family.home_1_street
+  %td= family.home_1_work_phones
+%tr
+  %td= family.child_2_info
+  %td= "#{family.home_1_city}, #{family.home_1_zip}"
+  %td= family.home_1_cell_phones
+-if family.child_3_first_name || family.home_1_emails[0]
+  %tr
+    %td= family.child_3_info
+    %td= family.home_1_emails[0]
+    %td &nbsp;
+-if family.child_4_first_name || family.home_1_emails[1]
+  %tr
+    %td= family.child_4_info
+    %td= family.home_1_emails[1]
+    %td &nbsp;
+-if family.child_5_first_name
+  %tr
+    %td= family.child_5_info
+    %td &nbsp;
+    %td &nbsp;
+-if family.home_2_parent_names
+  %tr
+    %td{:colspan => 3} &nbsp;
+  %tr
+    %td &nbsp;
+    %td= family.home_2_parent_names
+    %td= family.home_2_phone
+  %tr
+    %td &nbsp;
+    %td= family.home_2_street
+    %td= family.home_2_work_phones
+  %tr
+    %td &nbsp;
+    %td= "#{family.home_2_city}, #{family.home_2_zip}"
+    %td= family.home_2_cell_phones
+  -if family.home_2_emails[0]
+    %tr
+      %td &nbsp;
+      %td= family.home_2_emails[0]
+      %td &nbsp;
+  -if family.home_2_emails[1]
+    %tr
+      %td &nbsp;
+      %td= family.home_2_emails[1]
+      %td &nbsp;
+-if family.has_see_also_names?
+  %tr
+    %td{:colspan => 3} &nbsp;
+  -family.see_also_names.each do |name|
+    %tr
+      %td{:colspan => 3}= "#{name} - See #{family.last_name}"
+%tr
+  %td{:colspan => 3} &nbsp;

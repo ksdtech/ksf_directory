@@ -1,0 +1,13 @@
+.DS_Store
+.bundle
+Gemfile.lock
+*.tmproj
+*.db*
+app_config.yml
+database.rb
+log/**/*
+tmp/**/*
+bin/*
+vendor/gems/*
+!vendor/gems/cache/
+.sass-cache/*
