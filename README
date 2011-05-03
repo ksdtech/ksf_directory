@@ -1,0 +1,5 @@
+ksf_directory
+
+First pass at pulling KSF directory information from PowerSchool,
+reformatting for html and json, so it can be used by parents to 
+review and approve.
