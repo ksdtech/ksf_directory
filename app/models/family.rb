@@ -55,7 +55,7 @@ class Family
   ALL_FAMILIES_QUERY = %{ SELECT st.ID,
   h1id.Value    AS family_id
   FROM Students st
-  LEFT OUTER JOIN CustomText h1id ON (h1id.FieldNo={{Home_ID}}       AND h1id.KeyNo=st.DCID)
+  LEFT OUTER JOIN CustomText h1id ON (h1id.FieldNo={{Home_ID}} AND h1id.KeyNo=st.DCID)
   WHERE (st.Enroll_Status<=0) }
   
   FAMILY_QUERY = %{ SELECT st.ID,
@@ -273,6 +273,8 @@ class Family
     
     def reload_all
       family_ids = Family.all_families_query(POWERSCHOOL_DB_CONFIG)
+      puts "family_ids"
+      puts family_ids.join("\n")
       family_ids.each do |family_id|
         Family.reload(family_id.to_i)
       end
